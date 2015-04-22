@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Main-Class: de.christopherstock.shooter.Shooter
+Class-Path: ext/jogl.jar ext/jl1.0.jar ext/lwjgl.jar ext/lwjgl_util.jar
+Created-By: Christopher Stock
+Specification-Title: Shooter
+Specification-Vendor: Christopher Stock
+Specification-Version: 0.3.1
+Implementation-Title: Shooter
+Implementation-Vendor: Christopher Stock
+Implementation-Version: 0.3.1

@@ -1,0 +1,181 @@
+/*  $Id: LibHitPoint.java 1134 2012-03-12 19:51:02Z jenetic.bytemare $
+ *  =======================================================================================
+ */
+    package de.christopherstock.lib.game;
+
+    import  java.awt.geom.*;
+    import  java.util.*;
+    import  de.christopherstock.lib.*;
+    import  de.christopherstock.lib.fx.LibFX.FXGravity;
+    import  de.christopherstock.lib.fx.LibFX.FXSize;
+    import  de.christopherstock.lib.g3d.*;
+    import  de.christopherstock.lib.gl.*;
+    import  de.christopherstock.lib.math.*;
+    import  de.christopherstock.lib.ui.*;
+import  de.christopherstock.shooter.game.fx.*;
+
+    /**************************************************************************************
+    *   Represents a point of shot collision.
+    *
+    *   @author     Christopher Stock
+    *   @version    0.3.10
+    **************************************************************************************/
+    public class LibHitPoint implements Comparable<LibHitPoint>
+    {
+        public                      LibShot                 iShot                       = null;
+        public                      LibGameObject           iCarrier                    = null;
+        public                      LibVertex               iVertex                     = null;
+        public                      LibGLTexture            iBulletHoleTexture          = null;
+        public                      LibGLTexture            iWallTexture                = null;
+        public                      float                   iHorzShotAngle              = 0.0f;
+        public                      float                   iHorzInvertedShotAngle      = 0.0f;
+        public                      float                   iHorzFaceAngle              = 0.0f;
+        public                      float                   iVertFaceAngle              = 0.0f;
+        public                      float                   iDamageMultiplier           = 0.0f;
+
+        private                     LibColors[]             iSliverColors               = null;
+        private                     float                   iHorzDistance               = 0.0f;
+        private                     float                   iHorzSliverAngle            = 0.0f;
+        public                      float                   iVertShotAngle              = 0.0f;
+        private                     float                   iVertSliverAngle            = 0.0f;
+
+        public LibHitPoint
+        (
+            LibShot                 aShot,
+
+            LibGameObject           aCarrier,
+            LibGLTexture            aBulletHoleTexture,
+            LibGLTexture            aWallTexture,
+            LibColors[]             aSliverColors,
+            LibVertex               aVertex,
+
+            float                   aHorzDistance,
+            float                   aHorzShotAngle,
+            float                   aHorzInvertedShotAngle,
+            float                   aHorzSliverAngle,
+            float                   aHorzFaceAngle,
+            float                   aVertFaceAngle,
+            float                   aDamageMultiplier
+        )
+        {
+            iShot                   = aShot;
+
+            iCarrier                = aCarrier;
+            iBulletHoleTexture      = aBulletHoleTexture;
+            iWallTexture            = aWallTexture;
+            iSliverColors           = aSliverColors;
+
+            iVertex                 = aVertex;
+
+            iHorzShotAngle          = aHorzShotAngle;
+            iHorzInvertedShotAngle  = aHorzInvertedShotAngle;
+            iHorzSliverAngle        = aHorzSliverAngle;
+            iHorzFaceAngle          = aHorzFaceAngle;
+            iHorzDistance           = aHorzDistance;
+
+            iVertShotAngle          = LibMath.getAngleCorrect( iShot.iSrcPointVert, new Point2D.Float( (float)iShot.iSrcPointHorz.distance( new Point2D.Float( iVertex.x, iVertex.y ) ), iVertex.z ) );
+            iVertFaceAngle          = aVertFaceAngle;
+            iDamageMultiplier       = aDamageMultiplier;
+
+          //iVertDistance           = aVertDistance;
+          //iVertInvertedShotAngle  = 360.0f - ( iVertShotAngle - 180.0f  );
+
+            iVertSliverAngle        = LibMath.normalizeAngle( 180.0f - iVertShotAngle );
+        }
+
+        public static final LibHitPoint[] getAffectedHitPoints( Vector<LibHitPoint> hitPoints )
+        {
+            LibHitPoint[] nearToFar = hitPoints.toArray( new LibHitPoint[] {} );
+            Arrays.sort( nearToFar );
+
+            //ShooterDebug.bugfix.out( "---------------------------------" );
+
+            //browse all hitpoints - from the nearest to the farest
+            Vector<LibHitPoint> ret = new Vector<LibHitPoint>();
+            for ( LibHitPoint n : nearToFar )
+            {
+                //ShooterDebug.bugfix.out( "hitpoint: " + n.iHorzDistance );
+                //ShooterDebug.bugfix.out( " penetrable: " + n.iWallTexture.getMaterial().isPenetrable() );
+
+                //add hitpoint
+                ret.add( n );
+
+                //break if not penetrable
+                if ( !n.iWallTexture.getMaterial().iPenetrable )
+                {
+                    break;
+                }
+            }
+
+            return ret.toArray( new LibHitPoint[] {} );
+        }
+
+        @Deprecated
+        public static final LibHitPoint getNearestHitPoint( Vector<LibHitPoint> hitPoints )
+        {
+            //return null if no hit point was found
+            if ( hitPoints.size() == 0 )
+            {
+                //debug.out( "no hit points found!" );
+                return null;
+            }
+
+            //get the nearest hit-point
+            float nearestDistance = 0.0f;
+            int   nearestIndex    = -1;
+            for ( int i = 0; i < hitPoints.size(); ++i )
+            {
+                //assign 1st point
+                if
+                (
+                        ( nearestIndex == -1 )
+                    ||  ( nearestDistance > hitPoints.elementAt( i ).iHorzDistance )
+                )
+                {
+                    nearestIndex    = i;
+                    nearestDistance = hitPoints.elementAt( i ).iHorzDistance;
+                }
+            }
+
+            //debug.out( "exact nearest hitPoint-distance to player: [" + nearestDistance + "]" );
+
+            //return nearest hit-point
+            return hitPoints.elementAt( nearestIndex );
+        }
+
+        public final void launchWallSliver( Lib.ParticleQuantity sliverQuantity, float angleMod, int lifetime, FXSize size, FXGravity gravity )
+        {
+            boolean drawRedSliverLine = false;
+            if ( drawRedSliverLine )
+            {
+                //draw sliver line with own calculations
+                final   float   MAX_DRAW_SHOT_LINE_RANGE = 0.5f;
+                for ( float distance = 0.0f; distance < MAX_DRAW_SHOT_LINE_RANGE; distance += 0.1f )
+                {
+                    LibFXManager.launchStaticPoint
+                    (
+                        new LibVertex
+                        (
+                            iVertex.x - LibMath.sinDeg( iHorzSliverAngle         ) * distance,
+                            iVertex.y - LibMath.cosDeg( iHorzSliverAngle         ) * distance,
+                            iVertex.z - LibMath.sinDeg( iVertSliverAngle - 90.0f ) * distance
+                        ),
+                        LibColors.ERed,
+                        0.01f,
+                        lifetime
+                    );
+                }
+            }
+
+            //launch sliver fx on this hole
+            LibFXManager.launchSliver( iVertex, iSliverColors, iHorzSliverAngle, sliverQuantity, angleMod, lifetime, size, gravity );
+        }
+
+        @Override
+        public final int compareTo( LibHitPoint otherHP )
+        {
+            if ( iHorzDistance == otherHP.iHorzDistance ) return 0;
+            if ( iHorzDistance > otherHP.iHorzDistance  ) return 1;
+            return -1;
+        }
+    }

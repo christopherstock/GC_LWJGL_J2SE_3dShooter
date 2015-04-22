@@ -1,0 +1,3 @@
+Main-Class: de.christopherstock.shooter.Shooter
+Manifest-Version: 1.0
+Class-Path: ext/jogl.jar ext/jl1.0.jar ext/lwjgl.jar ext/lwjgl_util.jar

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Main-Class: de.christopherstock.shooter.Shooter
+Class-Path: lib/gluegen-rt.jar lib/jogl.jar lib/lwjgl.jar lib/lwjgl_util.jar lib/vecmath.jar
+Created-By: Christopher Stock
+Specification-Title: Shooter
+Specification-Vendor: Christopher Stock
+Specification-Version: 0.3.9
+Implementation-Title: Shooter
+Implementation-Vendor: Christopher Stock
+Implementation-Version: 0.3.9

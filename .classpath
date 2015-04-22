@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="src_lib"/>
+	<classpathentry kind="src" path="res"/>
+	<classpathentry kind="lib" path="dist/lib/jars/jmf.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jars/lwjgl_util.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jars/lwjgl.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jars/mp3plugin.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jars/vecmath.jar"/>
+	<classpathentry kind="lib" path="dist/lib/native/lwjgl/native_lwjgl_linux.jar"/>
+	<classpathentry kind="lib" path="dist/lib/native/lwjgl/native_lwjgl_macosx.jar"/>
+	<classpathentry kind="lib" path="dist/lib/native/lwjgl/native_lwjgl_solaris.jar"/>
+	<classpathentry kind="lib" path="dist/lib/native/lwjgl/native_lwjgl_windows.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

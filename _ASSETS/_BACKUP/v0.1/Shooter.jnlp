@@ -1,0 +1,24 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<jnlp spec="1.0+" codebase="http://christopherstock.jenetic.de/Shooter1/" href="Shooter.jnlp">
+    <information>
+        <title>Shooter</title>
+        <version>0.3</version>
+        <vendor>Christopher Stock</vendor>
+        <homepage href="http:/www.christopherstock.de" />
+        <description>A Shooter Project under developement.</description>
+        <offline-allowed />
+    </information>
+
+    <resources>
+        <j2se version="1.5+" />
+        <jar href="dist/Shooter.jar" />
+        <extension name="jogl" href="http://download.java.net/media/jogl/builds/archive/jsr-231-1.x-webstart-next/jogl.jnlp" />
+    </resources>
+    <application-desc main-class="de.christopherstock.shooter.Shooter" />
+</jnlp>
+
+<security>
+   <all-permissions/>
+</security>

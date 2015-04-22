@@ -1,0 +1,3 @@
+Main-Class: de.christopherstock.shooter.Shooter
+Manifest-Version: 1.0
+Class-Path: lib/TimingFramework-0.53.jar lib/jogl.jar lib/gluegen-rt.jar
