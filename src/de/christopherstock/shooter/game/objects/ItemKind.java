@@ -19,7 +19,7 @@
     public enum ItemKind
     {
         EAmmoBullet9mm(     ItemType.ECircle, ShooterSettings.ItemSettings.AMMO_RADIUS,    Items.EAmmoBullet9mm,       ShooterStrings.HUDMessages.PICKED_UP_BULLETS_9MM   , SoundFg.EPickUpItem1, new ItemEvent[] { ItemEvent.EGainAmmo20Bullet9mm,         }, true   ),
-        EAmmoShotgunShell(  ItemType.ECircle, ShooterSettings.ItemSettings.AMMO_RADIUS,    Items.EAmmoShotgunShell,    ShooterStrings.HUDMessages.PICKED_UP_SHOTGUN_SHELLS, SoundFg.EPickUpItem1, new ItemEvent[] { ItemEvent.EGainAmmo20ShotgunShells,     }, true   ),
+        EAmmoShotgunShell(  ItemType.ECircle, ShooterSettings.ItemSettings.AMMO_RADIUS,    Items.EAmmoShotgunShell,    ShooterStrings.HUDMessages.PICKED_UP_SHOTGUN_SHELLS, SoundFg.EPickUpItem1, new ItemEvent[] { ItemEvent.EGainAmmo40ShotgunShells,     }, true   ),
         EAmmoBullet44mm(    ItemType.ECircle, ShooterSettings.ItemSettings.AMMO_RADIUS,    Items.EAmmoBullet44mm,      ShooterStrings.HUDMessages.PICKED_UP_BULLETS_44MM  , SoundFg.EPickUpItem1, new ItemEvent[] { ItemEvent.EGainAmmo20Bullet44mm,        }, true   ),
         EAmmoBullet51mm(    ItemType.ECircle, ShooterSettings.ItemSettings.AMMO_RADIUS,    Items.EAmmoBullet51mm,      ShooterStrings.HUDMessages.PICKED_UP_BULLETS_51MM  , SoundFg.EPickUpItem1, new ItemEvent[] { ItemEvent.EGainAmmo20Bullet51mm,        }, true   ),
         EAmmoBullet792mm(   ItemType.ECircle, ShooterSettings.ItemSettings.AMMO_RADIUS,    Items.EAmmoBullet792mm,     ShooterStrings.HUDMessages.PICKED_UP_BULLETS_792MM , SoundFg.EPickUpItem1, new ItemEvent[] { ItemEvent.EGainAmmo20Bullet792mm,       }, true   ),

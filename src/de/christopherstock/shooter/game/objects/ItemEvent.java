@@ -20,7 +20,7 @@ import  de.christopherstock.shooter.ui.hud.HUDMessageManager;
     public enum ItemEvent implements GameEvent
     {
         EGainAmmo20Bullet9mm,
-        EGainAmmo20ShotgunShells,
+        EGainAmmo40ShotgunShells,
         EGainAmmo20Bullet51mm,
         EGainAmmo20Bullet44mm,
         EGainAmmo20Bullet792mm,
@@ -87,9 +87,9 @@ import  de.christopherstock.shooter.ui.hud.HUDMessageManager;
                     break;
                 }
 
-                case EGainAmmo20ShotgunShells:
+                case EGainAmmo40ShotgunShells:
                 {
-                    Level.currentPlayer().getAmmoSet().addAmmo( AmmoType.EShotgunShells, 20 );
+                    Level.currentPlayer().getAmmoSet().addAmmo( AmmoType.EShotgunShells, 40 );
                     break;
                 }
 

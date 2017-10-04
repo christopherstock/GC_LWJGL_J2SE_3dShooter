@@ -26,9 +26,9 @@
         /** for the assault rifle 5.1mm         */  EBullet51mm(        LibHoleSize.E51mm,     400,     Lib.ParticleQuantity.EMedium,  12,  FXSize.ESmall  ),
         /** for the assault rifle 7.92mm        */  EBullet792mm(       LibHoleSize.E79mm,     400,     Lib.ParticleQuantity.EHigh,    14,  FXSize.EMedium ),
         /** for the 9mm                         */  EBullet9mm(         LibHoleSize.E9mm,      200,     Lib.ParticleQuantity.EMassive, 16,  FXSize.EMedium ),
-        /** for the shotgun and auto-shotgun    */  EShotgunShells(     LibHoleSize.EHuge,     20,      Lib.ParticleQuantity.EMassive, 8,   FXSize.ELarge  ),
+        /** for the shotgun and auto-shotgun    */  EShotgunShells(     LibHoleSize.EHuge,     100,     Lib.ParticleQuantity.EMassive, 8,   FXSize.ELarge  ),
         /** for the magnum 3.57mm               */  EMagnumBullet357(   LibHoleSize.EHuge,     200,     Lib.ParticleQuantity.EMassive, 20,  FXSize.ELarge  ),
-        /** for the tranquilizer gun            */  ETranquilizerDarts( LibHoleSize.E79mm,     20,      Lib.ParticleQuantity.EMedium,  0,   FXSize.EMedium ),
+        /** for the tranquilizer gun            */  ETranquilizerDarts( LibHoleSize.E79mm,     60,      Lib.ParticleQuantity.EMedium,  0,   FXSize.EMedium ),
 
         /** for the flamer                      */  EFlamerGas(         LibHoleSize.E51mm,     5,       Lib.ParticleQuantity.ELow,     10,  FXSize.ELarge  ),
         /** for the grenade launcher            */  EGrenadeRolls(      LibHoleSize.EHuge,     12,      Lib.ParticleQuantity.EHigh,    30,  FXSize.ELarge  ),
@@ -66,5 +66,4 @@
         {
             return iDamage;
         }
-
     }
