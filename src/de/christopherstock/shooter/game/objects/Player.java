@@ -4,11 +4,8 @@
     package de.christopherstock.shooter.game.objects;
 
     import  java.util.*;
-
     import  javax.vecmath.*;
-
     import  org.lwjgl.opengl.*;
-
     import  de.christopherstock.lib.Lib.LibAnimation;
     import  de.christopherstock.lib.Lib.ViewSet;
     import  de.christopherstock.lib.g3d.*;
@@ -19,17 +16,17 @@
     import  de.christopherstock.shooter.*;
     import  de.christopherstock.shooter.ShooterSettings.*;
     import  de.christopherstock.shooter.g3d.*;
-import de.christopherstock.shooter.game.artefact.ArtefactSet;
-import de.christopherstock.shooter.game.artefact.ArtefactType;
-import de.christopherstock.shooter.game.artefact.ArtefactType.GiveTakeAnim;
-import de.christopherstock.shooter.game.artefact.firearm.*;
-import de.christopherstock.shooter.game.artefact.gadget.Gadget;
+    import  de.christopherstock.shooter.game.artefact.ArtefactSet;
+    import  de.christopherstock.shooter.game.artefact.ArtefactType;
+    import  de.christopherstock.shooter.game.artefact.ArtefactType.GiveTakeAnim;
+    import  de.christopherstock.shooter.game.artefact.firearm.*;
+    import  de.christopherstock.shooter.game.artefact.gadget.Gadget;
     import  de.christopherstock.shooter.game.objects.PlayerView.*;
     import  de.christopherstock.shooter.io.hid.*;
     import  de.christopherstock.shooter.io.sound.*;
     import  de.christopherstock.shooter.level.*;
     import  de.christopherstock.shooter.ui.hud.*;
-import  de.christopherstock.shooter.ui.hud.HUD.ChangeAction;
+    import  de.christopherstock.shooter.ui.hud.HUD.ChangeAction;
 
     /**************************************************************************************
     *   Represents the player.

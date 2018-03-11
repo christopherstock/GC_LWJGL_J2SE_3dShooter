@@ -13,11 +13,11 @@
     import  de.christopherstock.shooter.*;
     import 	de.christopherstock.shooter.game.artefact.firearm.AmmoSet;
 	import 	de.christopherstock.shooter.game.artefact.firearm.FireArm;
-import de.christopherstock.shooter.game.artefact.gadget.Gadget;
+    import  de.christopherstock.shooter.game.artefact.gadget.Gadget;
     import  de.christopherstock.shooter.game.objects.*;
     import  de.christopherstock.shooter.io.hid.*;
     import  de.christopherstock.shooter.level.*;
-import  de.christopherstock.shooter.ui.hud.HUD.*;
+    import  de.christopherstock.shooter.ui.hud.HUD.*;
 
     /**************************************************************************************
     *   Represents one occurence of an {@link ArtefactType} being hold by a player or a bot.

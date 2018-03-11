@@ -5,8 +5,8 @@
 
     import  java.util.Vector;
     import  de.christopherstock.lib.Lib.LibAnimation;
-import  de.christopherstock.shooter.*;
-import de.christopherstock.shooter.game.artefact.gadget.Gadget;
+    import  de.christopherstock.shooter.*;
+    import  de.christopherstock.shooter.game.artefact.gadget.Gadget;
 
     /**************************************************************************************
     *   Manages a set of artefacts being holded by the player, a bot or a device.
@@ -18,10 +18,10 @@ import de.christopherstock.shooter.game.artefact.gadget.Gadget;
     {
         /** The currently equipped artefact. */
         public                      Artefact                iCurrentArtefact            = null;
-        
+
         /** All currently holded artefacts. */
         public                      Vector<Artefact>        iArtefacts                  = null;
-        
+
         /** This is a instance of the {@link ArtefactType} {@link ArtefactType#EHands}, that is always holded. */
         public                      Artefact                iHands                      = null;
 

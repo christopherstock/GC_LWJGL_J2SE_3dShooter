@@ -10,12 +10,12 @@
     import  de.christopherstock.shooter.ShooterSettings.Fonts;
     import  de.christopherstock.shooter.ShooterSettings.HUDSettings;
     import  de.christopherstock.shooter.ShooterSettings.OffsetsOrtho;
-import de.christopherstock.shooter.game.artefact.Artefact;
-import de.christopherstock.shooter.game.artefact.ArtefactType;
-import de.christopherstock.shooter.game.artefact.firearm.*;
+    import  de.christopherstock.shooter.game.artefact.Artefact;
+    import  de.christopherstock.shooter.game.artefact.ArtefactType;
+    import  de.christopherstock.shooter.game.artefact.firearm.*;
     import  de.christopherstock.shooter.game.objects.Player.HealthChangeListener;
     import  de.christopherstock.shooter.level.*;
-import  de.christopherstock.shooter.ui.hud.AvatarMessage.AvatarImage;
+    import  de.christopherstock.shooter.ui.hud.AvatarMessage.AvatarImage;
 
     /**************************************************************************************
     *   The Heads Up Display.

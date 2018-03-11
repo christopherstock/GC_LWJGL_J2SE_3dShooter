@@ -20,13 +20,12 @@
     import  de.christopherstock.shooter.g3d.*;
     import  de.christopherstock.shooter.g3d.mesh.*;
     import  de.christopherstock.shooter.g3d.wall.*;
-import de.christopherstock.shooter.game.artefact.Artefact;
-import de.christopherstock.shooter.game.artefact.ArtefactType;
-import de.christopherstock.shooter.game.artefact.gadget.Gadget;
+    import  de.christopherstock.shooter.game.artefact.*;
+    import  de.christopherstock.shooter.game.artefact.gadget.Gadget;
     import  de.christopherstock.shooter.game.bot.*;
     import  de.christopherstock.shooter.game.objects.*;
     import  de.christopherstock.shooter.ui.hud.*;
-import  de.christopherstock.shooter.ui.hud.HUD.ChangeAction;
+    import  de.christopherstock.shooter.ui.hud.HUD.*;
 
     /**************************************************************************************
     *   Holds all values that are bound to the current active level.

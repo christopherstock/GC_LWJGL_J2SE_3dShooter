@@ -29,12 +29,12 @@
         /**************************************************************************************
         *   The application's current main state.
         **************************************************************************************/
-        private                     MainState        iMainState                  = MainState.EPreloader;
+        private                     MainState               iMainState                  = MainState.EPreloader;
 
         /**************************************************************************************
         *   The application's main state to enter the next tick.
         **************************************************************************************/
-        private                     MainState        iMainStateToChangeTo        = null;
+        private                     MainState               iMainStateToChangeTo        = null;
 
         /**************************************************************************************
         *   A flag being set to true if a closing-event on the main form is invoked.
@@ -171,7 +171,7 @@
 
                 //ShooterDebug.bugfix.out( "ticktime: [" + iTickTime + "] delay: [" + iTickDelay + "]" );
             }
-            
+
             //stop all bg sounds ( hangs on mac )
             SoundBg.stopCurrentSound();
         }
